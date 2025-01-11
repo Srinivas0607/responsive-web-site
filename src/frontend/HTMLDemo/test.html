@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toys E-commerce Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="bg-blue text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex">
+        <a  class="text-dark me-4">Home</a>
+        <a  class="text-dark">Contact</a>
+      </div>
+      <div>
+        <button class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search and Dropdown Menu -->
+  <div class="container mt-4">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="searchInput" placeholder="Search for toys...">
+      </div>
+      <div class="col-md-6">
+        <select class="form-select" id="categoryDropdown">
+          <option selected>Select Category</option>
+          <option value="action">Action Figures</option>
+          <option value="dolls">Dolls</option>
+          <option value="puzzles">Puzzles</option>
+          <option value="educational">Educational</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <section class="container">
+    <h3>Hot Offers</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+            <img src="toycar.jpg" alt="toycar">
+          
+          <div class="card-body">
+            <h5 class="card-title">Toy Car</h5>
+            
+            <p class="card-text">Discounted price: $10.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="dollhouse.jpg" alt="dollhouse">
+          <div class="card-body">
+            <h5 class="card-title">Doll House</h5>
+            <p class="card-text">Discounted price: $25.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="jigsaw.png" alt="jigsaw">
+          <div class="card-body">
+            <h5 class="card-title">Jigsaw Puzzle</h5>
+            <p class="card-text">Discounted price: $15.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" onsubmit="loginUser(event)">
+            <div class="mb-3">
+              <label for="loginUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="loginUsername" required>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="registerUsername" required>
+            </div>
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="registerEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="registerPassword" required>
+            </div>
+            <div class="mb-3">
+              <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="registerConfirmPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary"  onsubmit="registerUser(event)">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
